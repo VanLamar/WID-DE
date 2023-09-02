@@ -11,7 +11,7 @@ document.getElementById('generateJsonBtn').addEventListener('click', function ()
 function createDialogue() {
     const dialogueDiv = document.createElement('div');
     dialogueDiv.innerHTML = `
-            <button class="toggleDialogueContent" onclick="toggleContent(this, this.nextElementSibling)">⮟</button>
+            
             <div class="dialogueContent">
             <label for="id">Id:</label>
             <input type="text" class="dialogueId">
@@ -41,7 +41,6 @@ function createDialogue() {
 function createPlayerResponse() {
     const responseDiv = document.createElement('div');
     responseDiv.innerHTML = `
-            <button class="toggleResponseContent" onclick="toggleContent(this, this.nextElementSibling)">⮟</button>
             <div class="responseContent">
             <label for="responseTextKey">ResponseTextKey:</label>
             <input type="text" class="responseTextKey">

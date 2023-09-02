@@ -11,7 +11,8 @@ document.getElementById('generateJsonBtn').addEventListener('click', function ()
 function createDialogue() {
     const dialogueDiv = document.createElement('div');
     dialogueDiv.innerHTML = `
-        <div class="dialogueContent">
+            <button class="toggleDialogueContent" onclick="toggleContent(this, this.nextElementSibling)">⮟</button>
+            <div class="dialogueContent">
             <label for="id">Id:</label>
             <input type="text" class="dialogueId">
             <label for="initialPhrase">initialPhrase:</label>
@@ -40,7 +41,8 @@ function createDialogue() {
 function createPlayerResponse() {
     const responseDiv = document.createElement('div');
     responseDiv.innerHTML = `
-        <div class="responseContent">
+            <button class="toggleResponseContent" onclick="toggleContent(this, this.nextElementSibling)">⮟</button>
+            <div class="responseContent">
             <label for="responseTextKey">ResponseTextKey:</label>
             <input type="text" class="responseTextKey">
             <label for="nextDialogueID">NextDialogueID:</label>
@@ -62,12 +64,13 @@ function createPlayerResponse() {
 function toggleContent(button, contentDiv) {
     if (contentDiv.style.display === 'none') {
         contentDiv.style.display = 'block';
-        button.innerText = '⮟'; // символ для сворачивания
+        button.innerText = '⮟'; // символ для разворачивания
     } else {
         contentDiv.style.display = 'none';
-        button.innerText = '⮞'; // символ для разворачивания
+        button.innerText = '⮞'; // символ для сворачивания
     }
 }
+
 
 function generateJson() {
     const npcName = document.getElementById('npcName').value;

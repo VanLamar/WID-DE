@@ -64,3 +64,7 @@ function resetDialogue() {
     nameOverride = null;
     startDialogue(currentDialogID);
 }
+
+document.getElementById('back').addEventListener('click', function() {
+    window.location.href = "index.html";
+});

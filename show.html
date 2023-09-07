@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диалог</title>
+    <link rel="stylesheet" href="Showstyles.css">
+</head>
+<body>
+    <div class="container">
+        <input type="file" id="jsonUpload" accept=".json">
+        <input type="file" id="imgUpload" multiple accept="image/*">
+        <button onclick="resetDialogue()">Сброс</button>
+        <div class="dialog-panel">
+            <img src="" alt="Портрет" id="portrait" hidden>
+            <div id="npcName"></div>
+            <div id="dialogText"></div>
+            <div id="responseButtons"></div>
+        </div>
+    </div>
+    <script src="Showscript.js"></script>
+</body>
+</html>

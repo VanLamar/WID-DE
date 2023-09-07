@@ -184,3 +184,6 @@ document.getElementById('generateJsonBtn').addEventListener('click', function ()
     download('dialogues.json', jsonData);
 });
 
+document.getElementById('loadDialogueBtn').addEventListener('click', function() {
+    window.location.href = "show.html";
+});

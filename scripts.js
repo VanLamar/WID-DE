@@ -48,6 +48,8 @@ function createPlayerResponse() {
             <input type="text" class="nextDialogueID">
             <label for="triggerKey">TriggerKey:</label>
             <input type="text" class="triggerKey">
+            <label for="friendshipPoints">FriendshipPoints:</label>
+            <input type="number" class="friendshipPoints">
         </div>
     `;
     const toggleButton = document.createElement('button');
@@ -83,16 +85,18 @@ function generateJson() {
         const playerResponses = [];
         const responseElements = dialogueElement.querySelectorAll('.playerResponsesContainer > div');
         responseElements.forEach(responseElement => {
-            const responseTextKey = responseElement.querySelector('.responseTextKey').value;
-            const nextDialogueID = responseElement.querySelector('.nextDialogueID').value;
-            const triggerKey = responseElement.querySelector('.triggerKey').value;
+        const responseTextKey = responseElement.querySelector('.responseTextKey').value;
+        const nextDialogueID = responseElement.querySelector('.nextDialogueID').value;
+        const triggerKey = responseElement.querySelector('.triggerKey').value;
+        const friendshipPoints = responseElement.querySelector('.friendshipPoints').value;
 
-            playerResponses.push({
-                ResponseTextKey: responseTextKey,
-                NextDialogueID: nextDialogueID,
-                TriggerKey: triggerKey
-            });
+        playerResponses.push({
+            ResponseTextKey: responseTextKey,
+            NextDialogueID: nextDialogueID,
+            TriggerKey: triggerKey,
+            FriendshipPoints: friendshipPoints  
         });
+    });
 
         dialogues.push({
             Id: dialogueId,
@@ -163,12 +167,13 @@ function populateFieldsFromJson(jsonData) {
 
         // Заполняем ответы игрока
         dialogue.PlayerResponses.forEach(response => {
-            const responseDiv = createPlayerResponse();
-            responseDiv.querySelector('.responseContent .responseTextKey').value = response.ResponseTextKey;
-            responseDiv.querySelector('.responseContent .nextDialogueID').value = response.NextDialogueID;
-            responseDiv.querySelector('.responseContent .triggerKey').value = response.TriggerKey;
-            dialogueDiv.querySelector('.dialogueContent .playerResponsesContainer').appendChild(responseDiv);
-        });
+        const responseDiv = createPlayerResponse();
+        responseDiv.querySelector('.responseContent .responseTextKey').value = response.ResponseTextKey;
+        responseDiv.querySelector('.responseContent .nextDialogueID').value = response.NextDialogueID;
+        responseDiv.querySelector('.responseContent .triggerKey').value = response.TriggerKey;
+        responseDiv.querySelector('.responseContent .friendshipPoints').value = response.FriendshipPoints;  // новое поле
+        dialogueDiv.querySelector('.dialogueContent .playerResponsesContainer').appendChild(responseDiv);
+    });
 
         dialoguesContainer.appendChild(dialogueDiv);
     });

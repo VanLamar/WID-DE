@@ -19,42 +19,42 @@
             <button id="loadFileBtn">Load File</button>
             <input type="file" id="fileInput" style="display: none;">
             <button id="openInfoBtn">Open Info</button>
-            <div id="infoModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="instructions">
-                        <h2>Instructions</h2>
-                        <p><strong>NPC Name:</strong> The name of your NPC</p>
-                        <p><strong>Id:</strong> The unique name of the dialogue block, for transitioning between them. If it's the initial/first dialogue, write 'Start' here</p>
-                        <p><strong>initialPhrase:</strong> The phrase/response of the NPC</p>
-                        <p><strong>ResponseTextKey:</strong> The phrase the player can say (their response)</p>
-                        <p><strong>NextDialogueID:</strong> Specify the ID of the dialogue that will be triggered when this response is selected</p>
-                        <p>
-                            <strong>TriggerKey:</strong> An important part, used for remembering dialogues or changing its nature. Here are some examples:
-                            <ul>
-                                <li>Me - the dialogue is seen from the player's perspective, with their portrait</li>
-                                <li>Thoughts - the player's thoughts, without a portrait or name</li>
-                                <li>ProblemMentioned - triggers a unique dialogue when you talk about problems</li>
-                            </ul>
-                            If you don't need this, leave it empty
-                        </p>
-                        <p>
-                            Unique placeholders in initialPhrase:
-                            <ul>
-                                <li>[pX] - where X is a number, needed to change the portrait. X is the index, starting from 0. For example, [p1]</li>
-                                <li>[iX] - where X is a number, needed to give an item to the player. X is the item's ID, starting from 0. For example, [i0]</li>
-                                <li>[c] - is replaced by the name of the cat specified by the player in the game.</li>
-                            </ul>
-                        </p>
-                        <h3>How to use:</h3>
-                        <p>First, enter the NPC Name and click 'Add Dialogue', then enter 'Start' as it's the beginning. Enter the phrase you need, and click 'Add Player Response' if the player can respond, if not, don't click. Then, after clicking, enter the data where 'NextDialogueID' should be specified by the name you will call the next dialogue, for instance, 'Test'. Then click 'Add Dialogue' again if you have filled everything and need that many responses, and specify in the ID 'Test' (the name that was in NextDialogueID) and do this as many times as you need.</p>
-                    </div>
-                </div>
-                </div>
-            </div>
         </div>
         <div class="dialogue-editor">
             <div id="dialoguesContainer"></div>
+        </div>
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="instructions">
+                    <h2>Instructions</h2>
+                    <p><strong>NPC Name:</strong> The name of your NPC</p>
+                    <p><strong>Id:</strong> The unique name of the dialogue block, for transitioning between them. If it's the initial/first dialogue, write 'Start' here</p>
+                    <p><strong>initialPhrase:</strong> The phrase/response of the NPC</p>
+                    <p><strong>ResponseTextKey:</strong> The phrase the player can say (their response)</p>
+                    <p><strong>NextDialogueID:</strong> Specify the ID of the dialogue that will be triggered when this response is selected</p>
+                    <p>
+                        <strong>TriggerKey:</strong> An important part, used for remembering dialogues or changing its nature. Here are some examples:
+                        <ul>
+                            <li>Me - the dialogue is seen from the player's perspective, with their portrait</li>
+                            <li>Thoughts - the player's thoughts, without a portrait or name</li>
+                            <li>ProblemMentioned - triggers a unique dialogue when you talk about problems</li>
+                        </ul>
+                        If you don't need this, leave it empty
+                    </p>
+                    <p>
+                        Unique placeholders in initialPhrase:
+                        <ul>
+                            <li>[pX] - where X is a number, needed to change the portrait. X is the index, starting from 0. For example, [p1]</li>
+                            <li>[iX] - where X is a number, needed to give an item to the player. X is the item's ID, starting from 0. For example, [i0]</li>
+                            <li>[c] - is replaced by the name of the cat specified by the player in the game.</li>
+                        </ul>
+                    </p>
+                    <h3>How to use:</h3>
+                    <p>First, enter the NPC Name and click 'Add Dialogue', then enter 'Start' as it's the beginning. Enter the phrase you need, and click 'Add Player Response' if the player can respond, if not, don't click. Then, after clicking, enter the data where 'NextDialogueID' should be specified by the name you will call the next dialogue, for instance, 'Test'. Then click 'Add Dialogue' again if you have filled everything and need that many responses, and specify in the ID 'Test' (the name that was in NextDialogueID) and do this as many times as you need.</p>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
     <div class="json-preview">

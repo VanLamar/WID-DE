@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const initialPhrase = dialogue.querySelector('.initialPhrase').value;
             const responses = Array.from(dialogue.querySelectorAll('.response')).map((response, responseIndex) => {
                 const responseTextKey = response.querySelector('.responseTextKey').value;
-                const nextDialogueID = response.querySelector('.nextDialogueID').value || `Dialogue${responseIndex + 1}`;
+                const nextDialogueID = response.querySelector('.nextDialogueID').value || ``;
                 const triggerKey = response.querySelector('.triggerKey').value;
                 return {
                     ResponseTextKey: responseTextKey,
